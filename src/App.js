@@ -8,27 +8,37 @@ const API_BASE_URL = 'https://api.chucknorris.io/jokes';
 
 class App extends Component {
   state = {
-    quote: {}
+    quotes: []
   };
-  componentDidMount() {
+  componentDidMount() {}
+
+  addRandomQuote(text) {
+    // if (text) {
+    // this.setState((currentState) => ({
+    //   quotes: [...currentState.quotes, { value: text }]
+    // }));
+    // } else {
     axios.get(API_BASE_URL + '/random').then(({ data }) => {
-      this.setState({
-        quote: data
-      });
+      this.setState((currentState) => ({
+        quotes: [...currentState.quotes, data]
+      }));
     });
+    // }
   }
 
   render() {
-    const { value } = this.state.quote;
+    const { quotes } = this.state;
     return (
       <div className='App'>
         <Logo />
         <div className='QuotesWrapper'>
           <h3>Citations en Engliche</h3>
           <div className='QuoteList'>
-            <QuoteItem text={value} />
+            {quotes.map(({ value }) => (
+              <QuoteItem key={value} text={value} />
+            ))}
           </div>
-          <QuoteNew />
+          <QuoteNew onMetalAdd={this.addRandomQuote.bind(this)} />
         </div>
       </div>
     );

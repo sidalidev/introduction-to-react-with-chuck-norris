@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
 import React, { useState } from 'react';
 
-export default () => {
+export default (props) => {
   const [text, setText] = useState('');
 
   return (
@@ -12,10 +12,16 @@ export default () => {
         type='text'
         placeholder='Ta citation… '
       />
-      <span className='Clickable' role='img'>
+      <span
+        onClick={() => {
+          props.onMetalAdd(text);
+        }}
+        className='Clickable'
+        role='img'
+      >
         🆕
       </span>
-      <span className='Clickable' role='img'>
+      <span onClick={props.onMetalAdd} className='Clickable' role='img'>
         🤘
       </span>
     </div>

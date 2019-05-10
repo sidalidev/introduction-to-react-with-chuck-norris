@@ -9,9 +9,11 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+}
+* {
+  font-family: monospace, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -21,20 +23,78 @@ body {
   padding: 0;
   height: 100vh;
   width: 100vw;
-  display: grid;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   background-color: #c5e1fc;
-  .LogoContainer {
-    display: grid;
-    justify-items: center;
-    grid-row-gap: 10px;
-    img {
-      max-width: 200px;
-    }
-    a {
-      text-decoration: none;
-      color: black;
+}
+
+.LogoContainer {
+  margin-top: 40px;
+  display: grid;
+  justify-items: center;
+  grid-row-gap: 10px;
+  img {
+    max-width: 200px;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.QuotesWrapper {
+  display: grid;
+  justify-items: center;
+}
+
+.QuoteList {
+  min-height: 200px;
+  max-height: 200px;
+  overflow-y: scroll;
+}
+
+.QuoteItem {
+  border: solid 1px rgba(0, 0, 0, 0.2);
+  margin-top: 1px;
+  background-color: #dcebfc;
+  padding: 0px 10px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  grid-column-gap: 10px;
+  p {
+    font-size: 13px;
+  }
+}
+
+.Clickable {
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    transform: scale(1.2);
+  }
+  &:active {
+    transform: scale(1);
+  }
+}
+
+.QuoteNew {
+  margin-top: 40px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: auto auto;
+  grid-column-gap: 10px;
+  input {
+    background-color: #e1f1ff;
+    border: none;
+    padding: 10px 20px;
+    widows: 200px;
+    outline: none;
+    font-size: 13px;
+    &:focus {
+      border-bottom: #f15924 solid 1px;
     }
   }
 }

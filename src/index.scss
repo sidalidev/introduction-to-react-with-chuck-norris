@@ -49,14 +49,14 @@ body {
 }
 
 .QuoteList {
-  min-height: 200px;
-  max-height: 200px;
+  height: 400px;
   overflow-y: scroll;
 }
 
 .QuoteItem {
   border: solid 1px rgba(0, 0, 0, 0.2);
   margin-top: 1px;
+  width: 500px;
   background-color: #dcebfc;
   padding: 0px 10px;
   display: grid;
@@ -66,9 +66,13 @@ body {
   p {
     font-size: 13px;
   }
+  span {
+    justify-self: end;
+  }
 }
 
 .Clickable {
+  font-size: 20px;
   cursor: pointer;
   transition: 0.3s;
   &:hover {
@@ -84,10 +88,10 @@ body {
   display: grid;
   align-items: center;
   justify-items: center;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto 1fr 1fr;
   grid-column-gap: 10px;
   input {
-    background-color: #e1f1ff;
+    background-color: transparent;
     border: none;
     padding: 10px 20px;
     widows: 200px;

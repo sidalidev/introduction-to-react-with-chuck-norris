@@ -12,7 +12,7 @@ class App extends Component {
       <div className='App'>
         <Logo />
         <div className='QuotesWrapper'>
-          <h3>Quotes</h3>
+          <h3>Citations en Engliche</h3>
           <div className='QuoteList'>
             <QuoteItem />
           </div>

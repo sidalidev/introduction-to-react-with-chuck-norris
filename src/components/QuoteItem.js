@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Quote = () => {
+const Quote = ({ text }) => {
   return (
     <div className='QuoteItem'>
-      <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit."</p>
+      <p>"{text}"</p>
       <span className='Clickable'>🗑</span>
     </div>
   );
